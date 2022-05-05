@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
 
 const AddInventory = () => {
-    return (
-        <div>
-            <form action="">
-             <h1>add inventory</h1>
-            </form>
-        </div>
-    );
+
+  return (
+    <div>
+  
+    </div>
+  );
 };
 
 export default AddInventory;

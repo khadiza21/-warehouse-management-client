@@ -9,17 +9,14 @@ const Inventories = () => {
   const [inventories] = useInventory();
   return (
     <div>
-
-
-
       <div>
-        <Link className="d-flex justify-content-center my-5"
-          to="/addinventories"><Button>Add New Items</Button>
+        <Link
+          className="d-flex justify-content-center my-5"
+          to="/addinventories"
+        >
+          <Button>Add New Items</Button>
         </Link>
       </div>
-
-
-
 
       <div className=" container inventories-container my-5 pb-5">
         {inventories.map((inventory) => (
