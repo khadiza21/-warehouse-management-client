@@ -1,11 +1,15 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./components/Shared/Footer/Footer";
+import Navbarr from "./components/Shared/Header/Navbarr/Navbarr";
 
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
-    <div className="App">
-    
+    <div>
+ <Navbarr></Navbarr>
+ 
+      <Footer></Footer>
     </div>
   );
 }
