@@ -1,13 +1,20 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Banner from "../Banner/Banner";
-import Inventories from "../Inventories/Inventories";
+import HomeInventory from "../HomeInventory/HomeInventory";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Banner></Banner>
-      <Inventories></Inventories>
-    </div>
+      <HomeInventory></HomeInventory>
+
+
+      <Link className="d-flex justify-content-center my-5 py-5" to="/inventory"> <Button>Manage Inventories</Button></Link>
+
+
+    </>
   );
 };
 

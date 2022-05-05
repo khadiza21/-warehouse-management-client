@@ -1,11 +1,11 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { Fade, Zoom } from "react-reveal";
+import { Fade } from "react-reveal";
 
-import "./Inventory.css";
-const Inventory = (props) => {
+const HomeInventor = (props) => {
   const { name, description, quantity, img, supplierName, price } =
     props.inventory;
+
   return (
     <div className="container mt-3 pt-3 py-4 rounded shadow text-justify px-4">
       <div className="">
@@ -15,8 +15,7 @@ const Inventory = (props) => {
       {/* <h5>id: {_id}</h5> */}
 
       <div className="">
-        <Zoom>
-        <h4 className=" mt-2 fw-bold">Name: {name}</h4></Zoom>
+        <h4 className=" mt-2 fw-bold">Name: {name}</h4>
         <Fade top>
           <h6 className="inventory-text"> Description: {description}</h6>
         </Fade>
@@ -25,16 +24,24 @@ const Inventory = (props) => {
         <h5>Price: {price}</h5>
       </div>
 
-      <div className="d-flex my-3">
+      <div>
         <Button>Update Inventory</Button>
-   
-        <Button className="mx-4">Delete Inventory</Button>
       </div>
 
-    
+      {/* <Fade bottom>
+            <p className="my-3 ">
+              {" "}
+              <span className="fw-bold">Review: </span>{" "}
+              <span className="review-text">{review}</span>{" "}
+            </p>
+          </Fade> */}
 
+      {/* <span className="fw-bold">Ratings: ({rating})</span>
+          <Zoom>
+            <ReactStars count={5} value={rating} size={26} activeColor="#f15735" />
+          </Zoom> */}
     </div>
   );
 };
 
-export default Inventory;
+export default HomeInventor;
