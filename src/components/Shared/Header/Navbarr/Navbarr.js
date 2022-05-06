@@ -20,7 +20,7 @@ const Navbarr = () => {
               navbarScroll
             >
               <CustomLink to="/">Home</CustomLink>
-              <CustomLink to="/inventory">Inventory</CustomLink>
+              <CustomLink to="/inventories">Inventory</CustomLink>
               <CustomLink to="/blogs">Blogs</CustomLink>
               <CustomLink to="/about">About</CustomLink>
               <CustomLink to="/contact">Contact</CustomLink>

@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
+import AddInventory from "./components/AddInventory/AddInventory";
 import Blogs from "./components/Blogs/Blogs";
 import Home from "./components/Home/Home/Home";
 import Inventories from "./components/Inventories/Inventories";
@@ -19,10 +20,14 @@ function App() {
           path="/inventory/:id"
           element={<UpdateInventory></UpdateInventory>}
         ></Route>
-        
+
         <Route
           path="/inventories"
           element={<Inventories></Inventories>}
+        ></Route>
+        <Route
+          path="/addInventory"
+          element={<AddInventory></AddInventory>}
         ></Route>
 
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
