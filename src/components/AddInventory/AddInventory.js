@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 
 const AddInventory = () => {
   const { register, handleSubmit } = useForm();
+  
   const onSubmit = (data) => {
     console.log(data);
     const url = `http://localhost:5000/inventory`;
