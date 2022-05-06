@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
 
 const UpdateInventory = () => {
   const { id } = useParams();
@@ -12,8 +13,20 @@ const UpdateInventory = () => {
       .then((data) => setInventory(data));
   }, [id]);
   return (
-    <div>
-      <h1>to detail : {inventory.name}</h1>
+    <div className="text-center">
+      <div>
+        <h1>to detail Name: {inventory.name}</h1>
+        <h2>Quantity: {inventory.quantity}</h2>
+      </div>
+      <div>
+        <Link
+          className="d-flex justify-content-center my-5 py-5"
+          to="/inventories"
+        >
+       
+          <Button>Manage Inventories</Button>
+        </Link>
+      </div>
     </div>
   );
 };
