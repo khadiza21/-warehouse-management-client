@@ -8,7 +8,7 @@ const HomeInventory = () => {
   return (
     <div className=" container inventories-container my-5 pb-5">
      
-      {inventories.slice(0, 3).map((inventory) => (
+      {inventories.slice(0, 6).map((inventory) => (
         <HomeInventor key={inventory._id} inventory={inventory}></HomeInventor>
       ))}
     </div>
