@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
-import AddInventory from "./components/AddInventory/AddInventory";
 import Blogs from "./components/Blogs/Blogs";
 import Home from "./components/Home/Home/Home";
-import Inventories from "./components/Home/Inventories/Inventories";
+
 import Footer from "./components/Shared/Footer/Footer";
 import Navbarr from "./components/Shared/Header/Navbarr/Navbarr";
+import UpdateInventory from "./components/UpdateInventory/UpdateInventory";
 
 function App() {
   return (
@@ -14,12 +14,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/inventory" element={<Inventories></Inventories>}></Route>
-        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route
-          path="/addinventories"
-          element={<AddInventory></AddInventory>}
+          path="/inventory/:id"
+          element={<UpdateInventory></UpdateInventory>}
         ></Route>
+
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
       </Routes>
 
       <Footer></Footer>
