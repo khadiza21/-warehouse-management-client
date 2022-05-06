@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
 const UpdateInventory = () => {
@@ -14,16 +14,30 @@ const UpdateInventory = () => {
   }, [id]);
   return (
     <div className="text-center">
-      <div>
-        <h1>to detail Name: {inventory.name}</h1>
-        <h2>Quantity: {inventory.quantity}</h2>
+      <div className="container">
+        <div className="border my-5">
+          <Row className="g-5">
+            <Col xs={6} className="border">
+              <img className="img-fluid" src={inventory.img} alt="" />
+            </Col>
+            <Col xs={6} className="border">
+              <div>
+                <h1>Name: {inventory.name}</h1>
+                <h2>Quantity: {inventory.quantity}</h2>
+                <Button>Delivered</Button>
+              </div>
+            </Col>
+          </Row>
+        </div>
+
+        
       </div>
+
       <div>
         <Link
           className="d-flex justify-content-center my-5 py-5"
           to="/inventories"
         >
-       
           <Button>Manage Inventories</Button>
         </Link>
       </div>
