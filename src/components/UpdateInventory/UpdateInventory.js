@@ -1,29 +1,72 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import { useForm } from "react-hook-form";
 import { Link, useParams } from "react-router-dom";
 
 const UpdateInventory = () => {
-  const { register, handleSubmit } = useForm();
   const { id } = useParams();
   const [inventory, setInventory] = useState({});
+  const [reload, setIsReload] = useState(true)
+
 
   useEffect(() => {
     const url = `http://localhost:5000/inventory/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setInventory(data));
-  }, [id]);
+  }, [reload]);
 
   const handleDelivered = () => {
-    //let quantity = document.getElementById("quantity").innerText;
-    // console.log(quantity);
-    // quantity++;
-  };
-  const onSubmit = (data) => {
-    console.log(data);
+
     
+    const bq = parseInt(inventory.quantity);
+    const quantity= (bq - 1);
+    console.log(quantity);
+    const quantity2 = { quantity };
+    console.log(quantity2)
+   
+    
+    const url = `http://localhost:5000/inventory/${id}`;
+    console.log(url);
+    fetch(url, {
+      method: "PUT", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quantity2),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setIsReload(quantity);
+        console.log("success", data);
+        
+      });
   };
+
+  const handleUpdateQuantity = (event) => {
+    event.preventDefault();
+    const bq = parseInt(inventory.quantity);
+    const quantity1 = event.target.quantity.value;
+    const quantity= (bq + parseInt(quantity1));
+    const quantity2 = { quantity }; 
+    const url = `http://localhost:5000/inventory/${id}`;
+ 
+    fetch(url, {
+      method: "PUT", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quantity2),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("success", data);
+        setIsReload(quantity);
+        
+        alert("Quantity updated successfully!");
+              event.target.reset();
+      });
+  };
+
   return (
     <div className="text-center">
       <div className="container border my-5">
@@ -33,32 +76,33 @@ const UpdateInventory = () => {
           </Col>
 
           <Col xs={6} className="border">
-            <div>
-              <h3>Name: {inventory.name}</h3>
-              <h5>
-                Quantity: <span id="quantity">{inventory.quantity}</span>{" "}
-              </h5>
-              <Button onClick={handleDelivered()}>Delivered</Button>
+            <h3>Name: {inventory.name}</h3>
+            <h5>
+              Quantity: <span>{inventory.quantity}</span>
+            </h5>
+            <Button className="w-50 mx-auto my-3" onClick={handleDelivered}>
+              Delivered
+            </Button>
 
-              <div>
-                <form
-                  onSubmit={handleSubmit(onSubmit)}
-                  className="d-flex flex-column"
-                >
-                  <input
-                    className="mb-3 py-2"
-                    placeholder="Reviews"
-                    type="number"
-                    {...register("reviews")}
-                  />
-                  <input
-                    className="btn btn-success mb-3 py-2"
-                    type="submit"
-                    value="Add A New Inventory Item"
-                  />
-                </form>
-              </div>
-            </div>
+            <form
+              onSubmit={handleUpdateQuantity}
+              className="my-4 d-flex flex-column  w-50 mx-auto"
+            >
+              <input
+                className="mb-3 py-2 "
+                placeholder="Quantity"
+              
+                name="quantity"
+                required
+              />
+              <br />
+
+              <input
+                className="btn btn-success mb-3 py-2 "
+                type="submit"
+                value="Restcok Inventory"
+              />
+            </form>
           </Col>
         </Row>
       </div>
@@ -74,3 +118,5 @@ const UpdateInventory = () => {
 };
 
 export default UpdateInventory;
+
+

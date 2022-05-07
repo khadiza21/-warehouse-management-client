@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const AddInventory = () => {
   const { register, handleSubmit } = useForm();
@@ -16,6 +17,8 @@ const AddInventory = () => {
     })
     .then(res=> res.json())
     .then(addItem => console.log(addItem));
+    toast('Item Added Successfully...');
+  
   };
   return (
     <div className="w-50 mx-auto my-5 pb-5">
@@ -49,19 +52,19 @@ const AddInventory = () => {
         <input
           className="mb-3 py-2"
           placeholder="Price"
-          type="number"
+        
           {...register("price")}
         />
         <input
           className="mb-3 py-2"
           placeholder="Quantity"
-          type="number"
+       
           {...register("quantity")}
         />
         <input
           className="mb-3 py-2"
           placeholder="Reviews"
-          type="number"
+        
           {...register("reviews")}
         />
         <input
