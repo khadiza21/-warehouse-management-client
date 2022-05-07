@@ -9,7 +9,7 @@ const UpdateInventory = () => {
 
 
   useEffect(() => {
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://cryptic-stream-01124.herokuapp.com/inventory/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setInventory(data));
@@ -25,7 +25,7 @@ const UpdateInventory = () => {
     console.log(quantity2)
    
     
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://cryptic-stream-01124.herokuapp.com/inventory/${id}`;
     console.log(url);
     fetch(url, {
       method: "PUT", // or 'PUT'
@@ -48,7 +48,7 @@ const UpdateInventory = () => {
     const quantity1 = event.target.quantity.value;
     const quantity= (bq + parseInt(quantity1));
     const quantity2 = { quantity }; 
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://cryptic-stream-01124.herokuapp.com/inventory/${id}`;
  
     fetch(url, {
       method: "PUT", // or 'PUT'
