@@ -12,7 +12,7 @@ const Navbarr = () => {
   const handleSignOut = () => {
     signOut(auth);
   };
-  
+
   return (
     <>
       <Navbar bg="light" expand="lg">
@@ -29,27 +29,34 @@ const Navbarr = () => {
               navbarScroll
             >
               <CustomLink to="/">Home</CustomLink>
-              <CustomLink to="/inventories">Manage Items</CustomLink>
-              <CustomLink to="/addInventory">Add Items</CustomLink>
+              {user && (
+                <>        
+                  <CustomLink to="/inventories">Manage Items</CustomLink>
+                  <CustomLink to="/addInventory">Add Items</CustomLink>
+                  <CustomLink to="/myitems">My Items</CustomLink>
+                  
+                </>
+              )}
+
               <CustomLink to="/blogs">Blogs</CustomLink>
               <CustomLink to="/about">About</CustomLink>
               <CustomLink to="/contact">Contact</CustomLink>
               {user ? (
-              <button
-                className="btn btn-info text-dark fw-bold btn-link text-decoration-none"
-                onClick={handleSignOut}
-              >
-                Sign Out
-              </button>
-            ) : (
-              <CustomLink
-                as={Link}
-                className="btn btn-info fw-bold text-dark"
-                to="login"
-              >
-                Login
-              </CustomLink>
-            )}
+                <button
+                  className="btn btn-info text-dark fw-bold btn-link text-decoration-none"
+                  onClick={handleSignOut}
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <CustomLink
+                  as={Link}
+                  className="btn btn-info fw-bold text-dark"
+                  to="login"
+                >
+                  Login
+                </CustomLink>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

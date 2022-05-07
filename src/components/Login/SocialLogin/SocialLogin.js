@@ -30,15 +30,13 @@ const SocialLogin = () => {
     );
   }
 
-  if (user) {
+  if (user ) {
     navigate(from, { replace: true });
   }
 //   if (token) {
 //     navigate(from, { replace: true });
 //   }
-//   if (user || user1) {
-//     navigate("/home");
-//   }
+
   return (
     <div>
       <div className="d-flex align-items-center">

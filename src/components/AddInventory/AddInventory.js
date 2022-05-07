@@ -1,10 +1,13 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 
 const AddInventory = () => {
-  const { register, handleSubmit } = useForm();
-  
+  const { register, handleSubmit, reset } = useForm();
+  const [user] = useAuthState(auth);
+
   const onSubmit = (data) => {
     console.log(data);
     const url = `http://localhost:5000/inventory`;
@@ -13,17 +16,29 @@ const AddInventory = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
-    .then(res=> res.json())
-    .then(addItem => console.log(addItem));
-    toast('Item Added Successfully...');
-  
+      .then((res) => res.json())
+      .then((addItem) => {
+        console.log(addItem, user.email);
+
+        toast("Item Added Successfully...");
+      });
+    // toast("Item Added Successfully...");
+    reset();
   };
   return (
     <div className="w-50 mx-auto my-5 pb-5">
+      {console.log(user)}
       <h3 className="py-3 text-center fw-bold">Add A New Inventory Items</h3>
       <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column">
+        <input
+          // readOnly
+          value={user?.email}
+          className="mb-3 py-2"
+          {...register("email")}
+        />
+
         <input
           className="mb-3 py-2"
           placeholder="Name"
@@ -52,19 +67,16 @@ const AddInventory = () => {
         <input
           className="mb-3 py-2"
           placeholder="Price"
-        
           {...register("price")}
         />
         <input
           className="mb-3 py-2"
           placeholder="Quantity"
-       
           {...register("quantity")}
         />
         <input
           className="mb-3 py-2"
           placeholder="Reviews"
-        
           {...register("reviews")}
         />
         <input

@@ -1,12 +1,13 @@
-import React from 'react';
+//  import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
+  //  const [agree,setAgree] = useState(false);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -16,26 +17,32 @@ const Register = () => {
     
       const [updateProfile, updating] = useUpdateProfile(auth);
       // updateError
+    //   const [token] = useToken(auth); jn
       const navigate = useNavigate();
-      const location = useLocation();
+      //const location = useLocation(); me
     
-      let from = location.state?.from?.pathname || "/";
+     // let from = location.state?.from?.pathname || "/"; me
     
       const navigateLogin = () => {
         navigate("/login");
       };
     
-      if (user) {
-        navigate(from, { replace: true });
-      }
-    
-      if (loading || updating) {
+    //   if (user) {
+    //     navigate(from, { replace: true });
+    //   }
+     if (loading || updating) {
         return <Loading></Loading>;
       }
     
       if (user) {
-        console.log(user);
+        navigate('/home');
       }
+    
+    //   if (token) {
+    //     navigate('/home'); jn
+    //   }
+    
+     
     
       const handleRegister = async (event) => {
         event.preventDefault();
