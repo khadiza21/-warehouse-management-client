@@ -1,14 +1,14 @@
-import axios from "axios";
-//import { signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axiosPrivate from "../../api/axiosPrivate";
 import auth from "../../firebase.init";
 
 const MyItems = () => {
   const [user] = useAuthState(auth);
   const [items, setItems] = useState([]);
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
 //  
 useEffect( () => {
@@ -17,8 +17,16 @@ useEffect( () => {
        const email = user?.email;
        // const url = `https://thawing-mountain-91486.herokuapp.com/order?email=${email}`;
         const url = `http://localhost:5000/myitems?email=${email}`;
-        const {data} = await axios.get(url);
-        setItems(data);
+        try {
+            const {data} = await axiosPrivate.get(url);
+            setItems(data);
+        } catch (error) {
+            console.log(error.message);
+            if(error.response.status === 401 || error.response.status === 403){
+                        signOut(auth);
+                        navigate('/login')
+                    }
+        }
         // try{
         //     const {data} = await axiosPrivate.get(url);
         //     setOrders(data);
