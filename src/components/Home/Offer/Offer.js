@@ -20,7 +20,7 @@ const Offer = () => {
             </div>
 
             <div>
-              <img src={fruit} className="  img-fluid h-75  my-4" alt="" />
+              <img src={fruit} className="img-fluid h-75  my-4" alt="" />
             </div>
           </div>
         </Col>

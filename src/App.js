@@ -38,7 +38,7 @@ function App() {
         <Route path="/register" element={<Register></Register>}></Route>
 
         <Route
-          path="/inventories"
+          path="/manageinventories"
           element={
             <RequireAuth>
               <Inventories></Inventories>

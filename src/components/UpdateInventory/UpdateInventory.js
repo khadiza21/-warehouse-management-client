@@ -70,6 +70,7 @@ const UpdateInventory = () => {
         <Row className="g-5">
           <Col  xs={12} sm={12} md={6} >
             <img className="img-fluid rounded shadow mt-5" src={inventory.img} alt="" />
+            <h6 className="fw-bold text-center my-3">ID: {inventory._id}</h6>
           </Col>
 
           <Col  xs={12} sm={12} md={6} className=" pt-5">
@@ -133,7 +134,7 @@ const UpdateInventory = () => {
 
       <Link
         className="d-flex justify-content-center my-5 py-5"
-        to="/inventories"
+        to="/manageinventories"
       >
         <Button className="btn-success fw-bold">Manage Inventories</Button>
       </Link>
@@ -144,8 +145,5 @@ const UpdateInventory = () => {
 export default UpdateInventory;
 
 
-
-
-// catagory
 
 

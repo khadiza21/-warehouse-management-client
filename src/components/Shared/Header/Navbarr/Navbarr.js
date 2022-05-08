@@ -30,7 +30,7 @@ const Navbarr = () => {
               <CustomLink to="/">Home</CustomLink>
               {user && (
                 <>
-                  <CustomLink to="/inventories">Manage Items</CustomLink>
+                  <CustomLink to="/manageinventories">Manage Items</CustomLink>
                   <CustomLink to="/addInventory">Add Items</CustomLink>
                   <CustomLink to="/myitems">My Items</CustomLink>
                 </>

@@ -13,7 +13,7 @@ const Home = () => {
       <Offer></Offer>
       <HomeInventory></HomeInventory>
 
-      <Link className="d-flex justify-content-center my-5 py-5" to="/inventories">
+      <Link className="d-flex justify-content-center my-5 py-5" to="/manageinventories">
         <Button className="btn btn-success">Manage Inventories</Button>
       </Link>
       <AddSection></AddSection>
