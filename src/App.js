@@ -13,6 +13,7 @@ import Navbarr from "./components/Shared/Header/Navbarr/Navbarr";
 import UpdateInventory from "./components/UpdateInventory/UpdateInventory";
 import { ToastContainer } from "react-toastify";
 import MyItems from "./components/MyItems/MyItems";
+import NotFound from "./components/Shared/NotFound/NotFound";
 
 function App() {
   return (
@@ -61,6 +62,8 @@ function App() {
         ></Route>
 
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
 
       <Footer></Footer>

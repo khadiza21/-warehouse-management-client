@@ -31,7 +31,7 @@ const HomeInventor = (props) => {
       </div>
 
       <div>
-        <Button onClick={() => navigateToServiceDetail(_id)}>
+        <Button className="btn btn-danger" onClick={() => navigateToServiceDetail(_id)}>
           Update Inventory
         </Button>
       </div>
