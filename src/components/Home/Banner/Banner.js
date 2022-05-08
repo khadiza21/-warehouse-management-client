@@ -7,7 +7,7 @@ import './Banner.css';
 
 const Banner = () => {
   return (
-    <Container className="container mb-5 px-5 mx-3">
+    <Container className="container mb-5">
       <Row>
         <Col
           xs={12}
@@ -20,8 +20,7 @@ const Banner = () => {
             </Flip>
             <Fade bottom>
               <h5 className="mt-3">
-                We collaborate with you to create new value through digital
-                transformation. We have hundreds of specialists at your service.
+              Organic Foods And Café Is A Family Run Company That Runs Organic Super Markets And Cafés Selling Fresh Organic And Biodynamic Food, Supplers, Skincare, Cosmetics, Baby Items And Household Cleaning Products. We Have 5 Shops In Dubai On Sheikh Zayed Road.
               </h5>
             </Fade>
             <Button className="btn btn-success my-3 fw-bold" variant="btn">

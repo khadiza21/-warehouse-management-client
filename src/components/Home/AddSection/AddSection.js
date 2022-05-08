@@ -7,13 +7,13 @@ import './AddSection.css';
 const AddSection = () => {
   return (
     <div>
-      <Container className="container my-5 mx-5 p-5">
+      <Container className="container my-5 ">
         <Row className="mb-5 py-3">
           <Col xs={12} sm={12} md={6}>
-            <img src={banner1} className="shadow rounded img-fluid " alt="" />
+            <img src={banner1} className="shadow rounded img-fluid  my-4" alt="" />
           </Col>
           <Col xs={12} sm={12} md={6}>
-            <img src={banner2} className="shadow rounded img-fluid"  alt="" />
+            <img src={banner2} className="shadow rounded img-fluid my-4"  alt="" />
           </Col>
         </Row>
       </Container>
