@@ -47,8 +47,7 @@ const Footer = () => {
         <div  className="col-lg-3 col-md-6 col-12  py-3 px-1">
           <h3>Newsletter</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
-            blanditiis?
+          We will be glad to assist you in any question and encourage you to share your ideas and improvements with us.
           </p>
           <div  className="bg-white row py-2  rounded ">
               <input type="email"   className="inputt border-0 col-8"  placeholder="Your email"/>
