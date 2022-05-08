@@ -7,7 +7,7 @@ import fruit from "../../../image/fruits.png";
 const Offer = () => {
   return (
     <Container className="container my-5 ">
-      <Row className="mb-5 py-3 g-5">
+      <Row className="mb-5 py-3 g-3">
         <Col xs={12} sm={12} md={4} className="my-5">
           <div
             style={{ backgroundColor: "rgb(241, 169, 180)" }}
