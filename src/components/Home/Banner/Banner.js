@@ -24,7 +24,7 @@ const Banner = () => {
               </h5>
             </Fade>
             <Button className="btn btn-success my-3 fw-bold" variant="btn">
-              LIVE DEMO
+            Why Organic?
             </Button>
           </div>
         </Col>

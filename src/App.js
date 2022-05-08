@@ -14,6 +14,8 @@ import UpdateInventory from "./components/UpdateInventory/UpdateInventory";
 import { ToastContainer } from "react-toastify";
 import MyItems from "./components/MyItems/MyItems";
 import NotFound from "./components/Shared/NotFound/NotFound";
+import Contact from "./components/Contact/Contact";
+import About from "./components/About/About";
 
 function App() {
   return (
@@ -62,6 +64,8 @@ function App() {
         ></Route>
 
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/contact" element={<Contact></Contact>}></Route>
+        <Route path="/about" element={<About></About>}></Route>
         
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>

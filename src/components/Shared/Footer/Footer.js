@@ -3,26 +3,28 @@ import { Button } from "react-bootstrap";
 import "./Footer.css";
 
 const Footer = () => {
+  const today = new Date();
+  const year = today.getFullYear();
   return (
     <div className="p-5 mb-0 head-foot">
       <div className="row rew">
         <div className="col-lg-3 col-md-6 col-12 py-3 px-1">
           <h3>Address</h3>
           <p>
-            123 Street, New York , USA <br /> +01234523456 <br /> carx@gmail.com{" "}
+          <i  className="fa-solid fa-address-card"></i>  123 Street, New York , USA <br /> <i  className="fa-solid fa-phone"></i> +01234523456 <br /> <i  className="fa-solid fa-envelope"></i> freshoho@gmail.com{" "}
             <br />{" "}
           </p>
-          <div className="text-danger">
-            <span>FB</span>
-            <span>TWT</span>
-            <span>LNKD</span>
-            <span>YT</span>
+          <div className="text-danger fs-3 fw-bold">
+            <span className="me-2"><i  className="fa-brands fa-facebook-square"></i></span>
+            <span className="me-2"><i  className="fa-brands fa-twitter-square"></i></span>
+            <span className="me-2"><i  className="fa-brands fa-linkedin"></i></span>
+            <span className="me-2"><i  className="fa-brands fa-youtube"></i></span>
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-12 py-3 px-1">
+        <div  className="col-lg-3 col-md-6 col-12 py-3 px-1">
           <h3>Services</h3>
-          <ul class="list-style">
+          <ul  className="list-style">
             <li>General Carpentry</li>
             <li>Mechanicals Remodeling</li>
             <li>Car Floor</li>
@@ -31,9 +33,9 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-12  py-3 px-1">
+        <div  className="col-lg-3 col-md-6 col-12  py-3 px-1">
           <h3>Quick Links</h3>
-          <ul class="list-style">
+          <ul  className="list-style">
             <li>About Us</li>
             <li>Contact Us</li>
             <li>Our Services</li>
@@ -42,15 +44,15 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-12  py-3 px-1">
+        <div  className="col-lg-3 col-md-6 col-12  py-3 px-1">
           <h3>Newsletter</h3>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
             blanditiis?
           </p>
-          <div class="bg-white row py-2  rounded ">
+          <div  className="bg-white row py-2  rounded ">
               <input type="email"   className="inputt border-0 col-8"  placeholder="Your email"/>
-            <Button className="btn btn-danger col-3 mx-1">Send</Button>
+            <Button className="btn btn-danger col-3 mx-1 fw-bold">Send <i  className="fa-solid fa-paper-plane"></i></Button>
         
           </div>
         </div>
@@ -58,11 +60,11 @@ const Footer = () => {
 
       <hr />
 
-      <div class="row text-center">
-        <p class="col-lg-6 col-md-6 col-12">
-          © Your Site Name, All Right Reserved.
+      <div  className="row text-center">
+        <p  className="col-lg-6 col-md-6 col-12">
+        copyright © {year} Freshoho, All Right Reserved.
         </p>
-        <p class="col-lg-6 col-md-6 col-12 start-100">Developed By BK</p>
+        <p  className="col-lg-6 col-md-6 col-12 start-100">Developed By BK</p>
       </div>
     </div>
   );

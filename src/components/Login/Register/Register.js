@@ -1,7 +1,8 @@
 //  import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import useToken from '../../Shared/hooks/useToken';
 import Loading from '../../Shared/Loading/Loading';
@@ -20,9 +21,9 @@ const Register = () => {
       // updateError
     const [token] = useToken(user); 
       const navigate = useNavigate();
-      //const location = useLocation(); me
+      const location = useLocation(); 
     
-     // let from = location.state?.from?.pathname || "/"; me
+      let from = location.state?.from?.pathname || "/"; 
     
       const navigateLogin = () => {
         navigate("/login");
@@ -36,7 +37,8 @@ const Register = () => {
       }
     
       if (token) {
-        navigate('/home');
+        // navigate('/home');
+        navigate(from, { replace: true });
       }
     
    
@@ -54,6 +56,7 @@ const Register = () => {
         // await updateProfile({ displayName, photoURL });
         // alert('Updated profile');
         console.log("Updated profile");
+        toast("Account Created Successfully!")
   
     
         console.log(name, email, password);
@@ -61,7 +64,7 @@ const Register = () => {
     
     return (
         <div className="container w-50 mx-auto mt-5 pt-5">
-      <h3 className="text-primary text-center mt-2">Please Register</h3>
+      <h3 className="text-danger text-center mt-2">Please Register</h3>
       <Form onSubmit={handleRegister} className="mt-2 pt-2">
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Name</Form.Label>
@@ -101,7 +104,7 @@ const Register = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="success" type="submit">
           Submit
         </Button>
       </Form>

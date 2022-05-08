@@ -2,7 +2,6 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
 import auth from "../../../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 import "./Navbarr.css";
@@ -48,13 +47,14 @@ const Navbarr = () => {
                   Sign Out <i class="fa-solid fa-right-to-bracket"></i>
                 </button>
               ) : (
-                <button
-                  as={Link}
-                  className="btn btn-success fw-bold text-light"
-                  to="login"
-                >
-                  Login <i class="fa-solid fa-right-to-bracket"></i>
-                </button>
+                <CustomLink   className="btn btn-success fw-bold text-light" to="/login"> Login<i class="fa-solid fa-right-to-bracket"></i></CustomLink>
+             
+              
+               
+             
+                
+                  
+                
               )}
             </Nav>
           </Navbar.Collapse>

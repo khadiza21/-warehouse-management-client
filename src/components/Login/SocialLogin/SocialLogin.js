@@ -3,7 +3,7 @@ import {
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import {  useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import useToken from "../../Shared/hooks/useToken";
 import Loading from "../../Shared/Loading/Loading";
@@ -11,9 +11,9 @@ import Loading from "../../Shared/Loading/Loading";
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
- const [token] = useToken(user || user1);
+  const [token] = useToken(user || user1);
   const navigate = useNavigate();
-   const location = useLocation();
+  const location = useLocation();
 
   let from = location.state?.from?.pathname || "/";
 
@@ -31,39 +31,36 @@ const SocialLogin = () => {
     );
   }
 
-  // if (user ) {
-  //   navigate(from, { replace: true });
-  // }
   if (token) {
     navigate(from, { replace: true });
   }
 
   return (
-    <div>
+    <div className=" my-5">
       <div className="d-flex align-items-center">
-        <div style={{ height: "1px" }} className="bg-primary w-50"></div>
+        <div style={{ height: "1px" }} className="bg-success w-50"></div>
         <p className="mt-2 px-2">or</p>
-        <div style={{ height: "1px" }} className="bg-primary w-50"></div>
+        <div style={{ height: "1px" }} className="bg-success w-50"></div>
       </div>
       {errorElement}
       <div className="">
         <button
           onClick={() => signInWithGoogle()}
-          className="btn btn-info w-50 d-block mx-auto my-2"
+          className="btn btn-success w-50 d-block mx-auto my-2"
         >
-          {/* <img style={{ width: "30px" }} src={google} alt="" /> */}
-          <span className="px-2">Google Sign In</span>
+          <i class="fa-brands fa-google fw-bold fs-4 text-dark"></i>
+          <span className="px-2 fw-bold">Google Sign In</span>
         </button>
-        <button className="btn btn-info w-50 d-block mx-auto my-2">
-          {/* <img style={{ width: "30px" }} src={facebook} alt="" /> */}
-          <span className="px-2">Facebook Sign In</span>
+        <button className="btn btn-success w-50 d-block mx-auto my-2">
+          <i class="fa-brands fa-facebook-f fw-bold fs-4 text-dark"></i>
+          <span className="px-2 fw-bold">Facebook Sign In</span>
         </button>
         <button
           onClick={() => signInWithGithub()}
-          className="btn btn-info w-50 d-block mx-auto"
+          className="btn btn-success w-50 d-block mx-auto"
         >
-          {/* <img style={{ width: "30px" }} src={github} alt="" /> */}
-          <span className="px-2">Github Sign In</span>
+          <i class="fa-brands fa-github fw-bold fs-4 text-dark"></i>
+          <span className="px-2 fw-bold">Github Sign In</span>
         </button>
       </div>
     </div>
