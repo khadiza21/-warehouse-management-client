@@ -47,7 +47,7 @@ const Navbarr = () => {
                   Sign Out <i class="fa-solid fa-right-to-bracket"></i>
                 </button>
               ) : (
-                <CustomLink   className="btn btn-success fw-bold text-light" to="/login"> Login<i class="fa-solid fa-right-to-bracket"></i></CustomLink>
+                <CustomLink   className="btn btn-success fw-bold text-light" to="/login"> Login <i class="fa-solid fa-right-to-bracket"></i></CustomLink>
              
               
                

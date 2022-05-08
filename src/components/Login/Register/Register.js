@@ -64,7 +64,7 @@ const Register = () => {
     
     return (
         <div className="container w-50 mx-auto mt-5 pt-5">
-      <h3 className="text-danger text-center mt-2">Please Register</h3>
+      <h3 className="text-danger text-center fw-bold mt-2">Please Register</h3>
       <Form onSubmit={handleRegister} className="mt-2 pt-2">
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Name</Form.Label>
@@ -104,8 +104,8 @@ const Register = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="success" type="submit">
-          Submit
+        <Button variant="success" type="submit" className='fw-bold'>
+          Register
         </Button>
       </Form>
       <p className="my-2">
