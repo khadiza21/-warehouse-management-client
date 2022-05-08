@@ -28,10 +28,10 @@ const AddInventory = () => {
     reset();
   };
   return (
-    <div className="w-50 mx-auto my-5 pb-5">
+    <div className="container mx-auto my-5 pb-5">
       {console.log(user)}
-      <h3 className="py-3 text-center fw-bold">Add A New Inventory Items</h3>
-      <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column">
+      <h3 className="py-3 text-danger fs-1 pb-5  text-center fw-bold">Add A New Inventory Items</h3>
+      <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column w-75 mx-auto">
         <input
           // readOnly
           value={user?.email}
@@ -65,7 +65,7 @@ const AddInventory = () => {
           {...register("description")}
         />
         <input
-          className="mb-3 py-2"
+          className="mb-3 py-2 mt-1"
           placeholder="Price"
           {...register("price")}
         />
@@ -92,7 +92,7 @@ const AddInventory = () => {
         <input
           className="btn btn-success mb-3 py-2"
           type="submit"
-          value="Add A New Inventory Item"
+          value="Add New Inventory Item"
         />
       </form>
     </div>
