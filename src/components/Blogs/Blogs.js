@@ -7,7 +7,7 @@ const Blogs = () => {
   return (
     <div className="mb-5 pb-5">
       <Bounce top>
-        <h2 className=" b-text text-center mt-5  pt-5 fw-bold">OURS BLOGS</h2>
+        <h1 className=" b-text text-center mt-5  pt-5 fw-bold">OURS BLOGS</h1>
       </Bounce>
       <Accordion className="container my-3 py-2 " defaultActiveKey="0">
         <Accordion.Item eventKey="0" className=" border-0 shadow rounded my-4">
