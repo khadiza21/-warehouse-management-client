@@ -1,14 +1,13 @@
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-
+import { Button, Table } from "react-bootstrap";
+import "./MyItems.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import axiosPrivate from "../../api/axiosPrivate";
 import auth from "../../firebase.init";
-//import useInventory from "../Shared/hooks/useInventory";
 
 const MyItems = () => {
-  // const [inventories,setInventories] = useInventory();
   const [user] = useAuthState(auth);
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
@@ -49,23 +48,48 @@ const MyItems = () => {
   };
 
   return (
-    <div className="w-50 mx-auto">
-      <h2>Your Items: {items.length}</h2>
-      <h3>{user.email}</h3>
+    <div className="container my-5">
+      <h5 className="text-center fw-bold text-dark py-2">Your Email: <span className="text-success">{user.email}</span> </h5>
+      <h4 className="text-center fw-bold fs-4 text-dark pb-5">Your Items: <span className="text-danger">{items.length}</span></h4> 
 
-      {items.map((item) => (
-        <div key={item._id}>
-          <p>
-            {item.email} : {item.name}
-          </p>
-          <button
-            className="btn btn-info m-3"
-            onClick={() => handleDelete(item._id)}
-          >
-            Delete Items
-          </button>
-        </div>
-      ))}
+      <div className=" table-responsive">
+        <Table
+          hover  size="sm" className="text-center"
+          striped
+ 
+      
+        >
+          <thead className="rounded">
+            <tr className="rounded">
+              <th className=" img">Image</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>SupplierName</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+
+          {items.map((item) => (
+            <tbody key={item._id}>
+              <td className="">
+                <img src={item.img} alt="" className=" img-set img-fluid" />
+              </td>
+              <td className="pb-0 pt-3 fw-bold">{item.name}</td>
+              <td className="pb-0 pt-3 fw-bold"><sup>$</sup>{item.price}</td>
+              <td className="pb-0 pt-3 fw-bold">{item.quantity}</td>
+              <td className="pb-0 pt-3 fw-bold">{item.supplierName}</td>
+
+              <td className="pb-0 fw-bold ">
+                <i
+                  onClick={() => handleDelete(item._id)}
+                  class="fa-solid fa-trash-can fs-5"
+                ></i>
+              </td>
+            </tbody>
+          ))}
+        </Table>
+      </div>
     </div>
   );
 };
