@@ -1,6 +1,6 @@
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { Button, Table } from "react-bootstrap";
+import {  Table } from "react-bootstrap";
 import "./MyItems.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";

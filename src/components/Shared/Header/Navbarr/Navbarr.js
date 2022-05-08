@@ -30,11 +30,10 @@ const Navbarr = () => {
             >
               <CustomLink to="/">Home</CustomLink>
               {user && (
-                <>        
+                <>
                   <CustomLink to="/inventories">Manage Items</CustomLink>
                   <CustomLink to="/addInventory">Add Items</CustomLink>
                   <CustomLink to="/myitems">My Items</CustomLink>
-                  
                 </>
               )}
 
@@ -43,19 +42,19 @@ const Navbarr = () => {
               <CustomLink to="/contact">Contact</CustomLink>
               {user ? (
                 <button
-                  className="btn btn-info text-dark fw-bold btn-link text-decoration-none"
+                  className="btn btn-success text-light fw-bold btn-link text-decoration-none"
                   onClick={handleSignOut}
                 >
-                  Sign Out
+                  Sign Out <i class="fa-solid fa-right-to-bracket"></i>
                 </button>
               ) : (
-                <CustomLink
+                <button
                   as={Link}
-                  className="btn btn-info fw-bold text-dark"
+                  className="btn btn-success fw-bold text-light"
                   to="login"
                 >
-                  Login
-                </CustomLink>
+                  Login <i class="fa-solid fa-right-to-bracket"></i>
+                </button>
               )}
             </Nav>
           </Navbar.Collapse>
