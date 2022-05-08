@@ -35,58 +35,58 @@ const AddInventory = () => {
         <input
           // readOnly
           value={user?.email}
-          className="mb-3 py-2"
+          className="mb-3 py-2 ps-2"
           {...register("email")}
         />
 
         <input
           className="mb-3 py-2"
-          placeholder="Name"
+          placeholder=" Name"
           {...register("name", { required: true, maxLength: 20 })}
         />
         <input
           className="mb-3 py-2"
-          placeholder="Supplier Name"
+          placeholder=" Supplier Name"
           {...register("supplierName", { required: true, maxLength: 20 })}
         />
         <input
           className="mb-3 py-2"
-          placeholder="Image Url"
+          placeholder=" Image Url"
           {...register("img")}
         />
         <input
           className="mb-3 py-2"
-          placeholder="Product Code"
+          placeholder=" Product Code"
           {...register("product_code")}
         />
         <textarea
           className="mb-3 py-2"
-          placeholder="Description"
+          placeholder=" Description"
           {...register("description")}
         />
         <input
           className="mb-3 py-2 mt-1"
-          placeholder="Price"
+          placeholder=" Price"
           {...register("price")}
         />
         <input
           className="mb-3 py-2"
-          placeholder="Quantity"
+          placeholder=" Quantity"
           {...register("quantity")}
         />
         <input
           className="mb-3 py-2"
-          placeholder="Reviews"
+          placeholder=" Reviews"
           {...register("reviews")}
         />
         <input
           className="mb-3 py-2"
-          placeholder="Catagory"
+          placeholder=" Catagory"
           {...register("catagory")}
         />
         <input
           className="mb-3 py-2"
-          placeholder="Availability"
+          placeholder=" Availability"
           {...register("availability")}
         />
         <input

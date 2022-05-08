@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import useInventory from "../Shared/hooks/useInventory";
 
@@ -16,6 +17,7 @@ const Inventories = () => {
         .then((res) => res.json())
         .then((deleteItem) => {
           console.log(deleteItem);
+          toast("Deleted Item!");
           const remaining = inventories.filter(
             (inventory) => inventory._id !== id
           );

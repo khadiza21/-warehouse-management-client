@@ -6,6 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import axiosPrivate from "../../api/axiosPrivate";
 import auth from "../../firebase.init";
+import { toast } from "react-toastify";
 
 const MyItems = () => {
   const [user] = useAuthState(auth);
@@ -41,6 +42,7 @@ const MyItems = () => {
         .then((res) => res.json())
         .then((deleteItem) => {
           console.log(deleteItem);
+          toast("Delivered One Item!");
           const remaining = items.filter((item) => item._id !== id);
           setItems(remaining);
         });
