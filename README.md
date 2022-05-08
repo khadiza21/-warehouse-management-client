@@ -1,9 +1,31 @@
-# Client Side : React - Warehouse
+# Freshoho -React-Router-Firebase-Auth-Warehouse
+
 ## Livesite Link: // https://cryptic-stream-01124.herokuapp.com/
+
 ### Client Side Code Link: https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-khadiza21
+
+#### Short Description: My project name is Freshoho. This is the warehouse inventory mangagement Website.In this website owner manage their inventoy and they can deliverd and update inventory quantity
+
+##### About my project--
+
+- This is a website "Freshoho".The website is for warehouse inventory Purpose.
+- This is the full stack website cause forntend and backend also here. This is the forntend part(client side) code .
+
+- This project client side is made by Mainly authentication , routing , react and another use here html and React and JS. Routing is like path that can help to visit us one part to another part without reloading page and react is a framework of JS.It's makes programmer life easy.
+
+- Here have some private route when a user logged in then user can see private route.
+
+- Here User can create their account and add new inventory and they can delete their inventory.
+
+###### Language: HTML5, CSS3, JS , JS ES6
+
+###### Libraris: React , React-Router-Dom, React-Dom, react-bootstrap,react-firebase-hooks,react-reveal,react-toastify
+
+<a href=""><img src="" className="rounded mt-5" alt="" /></a>
+
 <!-- cd ..\..\Windows -->
-<!-- cd 
-Artrugrul\M-11\backendDatabaseIntegrate\m-70-warehouser-react-node-mongo\warehouser-react-node-mongo-server 
+<!-- cd
+Artrugrul\M-11\backendDatabaseIntegrate\m-70-warehouser-react-node-mongo\warehouser-react-node-mongo-server
 #dc3545 pink
 #1f5f0c green
 #23252b gray
